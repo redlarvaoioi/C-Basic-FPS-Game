@@ -1,0 +1,21 @@
+{
+  "name": "Sandbox FPS (Emscripten)",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/cmake:1": {},
+    "ghcr.io/devcontainers/features/ninja:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/setup-emsdk.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "webfreak.debug",
+        "ms-vscode.cmake-tools"
+      ]
+    }
+  },
+  "forwardPorts": [8000],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace"
+}
